@@ -15,26 +15,132 @@
     padding: 30px;
     text-align: center;
 
-    .att-image img {
-      width: 100%;
-      height: auto;
+    .att-link {
+      cursor: pointer;
+
+      .att-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .att-name {
+        color: var(--e-global-color-primary);
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .att-title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .att-excerpt {
+        font-size: 18px;
+      }
+
+      .att-linked-in {
+        font-size: 12px;
+        color: var(--e-global-color-secondary);
+      }
+    }
+  }
+}
+
+#att-popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000000dd;
+  display: none;
+  z-index: 9999999998;
+}
+
+.close-att-popup {
+  cursor: pointer;
+}
+
+#att-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #FFF;
+  z-index: 9999999999;
+  width: 900px;
+  height: auto;
+  display: none;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+
+  .att-popup-inner {
+
+    .close-att-popup-btn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      margin-bottom: 20px;
+      background: var(--e-global-color-secondary);
+
+      &:before,
+      &:after {
+        position: absolute;
+        background: #fff;
+        width: 20px;
+        height: 2px;
+        left: 50%;
+        top: 50%;
+        content: " ";
+        transform: translate(-50%) rotate(45deg);
+      }
+      &:after {
+        transform: translate(-50%) rotate(-45deg);
+      }
     }
 
-    .att-name {
-      color: $darkgreen;
-      font-size: 22px;
-      font-weight: bold;
+    .attp-top {
+      background-color: var(--e-global-color-primary);
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+
+      .att-image {
+        margin-bottom: -60px;
+
+        img {
+          width: 250px;
+          height: 250px;
+          margin: 20px 50px 20px 20px;
+          border-radius: 50%;
+        }
+      }
+
+      .att-top-right {
+        .att-name {
+          color: #fff;
+          font-size: 26px;
+          font-weight: bold;
+        }
+        .att-title {
+          color: #fff;
+          font-size: 24px;
+        }
+        .att-linked-in {
+          font-size: 12px;
+          color: var(--e-global-color-secondary);
+        }
+        padding-bottom: 20px;
+      }
     }
 
-    .att-title {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .att-excerpt {
-      color: #000;
+    .attp-bottom {
+      padding: 100px;
     }
   }
 }

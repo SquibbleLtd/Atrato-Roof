@@ -146,32 +146,35 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 		  if ( $the_query->have_posts() ) {
 		    while ( $the_query->have_posts() ) {
 		      $the_query->the_post();
-					?><div class="att-container" data-team-id="<?php echo get_the_ID(); ?>">
-						<div class="att-image">
-							<?php echo wp_get_attachment_image( get_field('image') , 'team-member' ); ?>
-						</div>
-						<div class="att-name">
-							<?php the_title(); ?>
-						</div>
-						<div class="att-title">
-							<?php the_field( 'title' ); ?>
-						</div>
-						<div class="att-excerpt">
-							<?php the_field( 'excerpt' ); ?>
-						</div>
-						<?php
-						$liurl = get_field( 'linkedin_url' );
-						if ($liurl != "") {
-							?>
-							<div class="att-linked-in">
-								<a href="<?php echo $liurl; ?>" target="_blank">
-									Connect with me
-								</a>
+					?><div class="att-container">
+						<div class="att-link" data-team-id="<?php echo get_the_ID(); ?>">
+							<div class="att-image">
+								<?php echo wp_get_attachment_image( get_field('image') , 'team-member' ); ?>
+							</div>
+							<div class="att-name">
+								<?php the_title(); ?>
+							</div>
+							<div class="att-title">
+								<?php the_field( 'title' ); ?>
+							</div>
+							<div class="att-excerpt">
+								<?php the_field( 'excerpt' ); ?>
 							</div>
 							<?php
-						}
-						?>
-					</div><?php
+							$liurl = get_field( 'linkedin_url' );
+							if ($liurl != "") {
+								?>
+								<div class="att-linked-in">
+									<a href="<?php echo $liurl; ?>" target="_blank">
+										Connect with me
+									</a>
+								</div>
+								<?php
+							}
+							?>
+						</div>
+					</div>
+					<?php
 		    }
 		  }
 		  wp_reset_postdata();

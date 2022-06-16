@@ -1,0 +1,40 @@
+.atr-the-team {
+  margin-left: -15px;
+  margin-right: -15px;
+  width: calc(100% + 30px);
+  max-width: calc(100% + 30px);
+  display: flex;
+  flex-wrap: wrap;
+
+  .att-container {
+    width: 25%;
+
+    @media (max-width: 767px) { width: 50%; }
+    @media (max-width: 400px) { width: 100%; }
+
+    padding: 30px;
+    text-align: center;
+
+    .att-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .att-name {
+      color: $darkgreen;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .att-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .att-excerpt {
+      color: #000;
+    }
+  }
+}

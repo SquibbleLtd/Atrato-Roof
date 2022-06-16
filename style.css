@@ -1,0 +1,69 @@
+/*
+Template Name: Atrato Roof
+Template: generatepress
+*/
+
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css");
+
+@media(min-width: 1400px){
+    .elementor-section.elementor-section-boxed > .elementor-container{
+        max-width: 1400px !important;
+    }
+    .inside-header{
+        padding: 20px 0;
+    }
+}
+
+@media(max-width: 767px){
+    .site-header .header-image{
+        width: 200px;
+    }
+
+    .icon-menu-bars{
+        display: none;
+    }
+
+    .menu-toggle .screen-reader-text{
+        width: 100px !important;
+        height: 40px !important;
+        margin: 0 !important;
+        display: block !important;
+        background: #ffffff !important;
+        font-size: 15px !important;
+        color: #025B49 !important;
+        top: 35px !important;
+        line-height: 32px !important;
+        border-radius: 50px !important;
+        right: 10px !important;
+        clip: auto !important;
+        clip-path: none !important;
+        box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 16%) !important;
+    }
+
+    .toggled .menu-toggle .screen-reader-text{
+        width: 100px !important;
+        height: 40px !important;
+        margin: 0 !important;
+        display: block !important;
+        font-size: 15px !important;
+        color: #ffffff !important;
+        background: transparent !important;
+        top: 35px !important;
+        line-height: 32px !important;
+        border: 3px solid #ffffff;
+        border-radius: 50px !important;
+        right: 10px !important;
+        clip: auto !important;
+        clip-path: none !important;
+        box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 16%) inset, 0px 0px 6px 0px rgb(0 0 0 / 16%) !important;
+    }
+}
+
+.site-header{
+    z-index: 100;
+}
+
+.inside-header{
+    padding: 20px 10px;
+}
+

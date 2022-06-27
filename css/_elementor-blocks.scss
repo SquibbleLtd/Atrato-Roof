@@ -5,6 +5,7 @@
   max-width: calc(100% + 30px);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   .att-container {
     width: 25%;
@@ -18,7 +19,7 @@
     .att-link {
       cursor: pointer;
 
-      .att-image { 
+      .att-image {
         position: relative;
         .attachment-team-member {
           width: 100%;
@@ -73,6 +74,21 @@
           margin-right: 10px;
         }
       }
+    }
+  }
+
+  &.staff-group-investment  {
+    .att-container {
+      width: 20%;
+      @media (max-width: 767px) { width: 50%; }
+      @media (max-width: 400px) { width: 100%; }
+    }
+  }
+  &.staff-group-directors  {
+    .att-container {
+      width: 33.3%;
+      @media (max-width: 767px) { width: 50%; }
+      @media (max-width: 400px) { width: 100%; }
     }
   }
 }

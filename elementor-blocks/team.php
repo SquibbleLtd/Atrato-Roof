@@ -108,6 +108,19 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'staff_group',
+			[
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'label' => 'Group to show',
+				'options' => [
+					'' => 'Show all',
+					'directors' => 'Board of directors',
+					'investment' => 'Investment team',
+				],
+			]
+		);
+
 		/*
 		$tmo = get_team_member_options();
 
@@ -133,15 +146,28 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		//$settings = $this->get_settings_for_display();
+		$settings = $this->get_settings_for_display();
 		?>
 
-		<div class="atr-the-team">
+		<div class="atr-the-team staff-group-<?php echo $settings['staff_group']; ?>">
 			<?php
 			$args = [
 		    'posts_per_page' => -1,
 		    'post_type' => 'team',
 		  ];
+			if ($settings['staff_group'] != "") {
+
+				$args['meta_query'] = [
+	        [
+            'key'     => 'staff_group',
+            'value'   => $settings['staff_group'],
+            'compare' => '=',
+	        ]
+				];
+
+			}
+
+
 		  $the_query = new WP_Query( $args );
 		  if ( $the_query->have_posts() ) {
 		    while ( $the_query->have_posts() ) {

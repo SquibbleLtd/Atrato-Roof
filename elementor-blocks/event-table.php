@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Elementor_The_Team extends \Elementor\Widget_Base {
+class Elementor_Event_Table extends \Elementor\Widget_Base {
 
 	/**
 	 * Get widget name.
@@ -22,7 +22,7 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'the_team';
+		return 'event_table';
 	}
 
 	/**
@@ -35,7 +35,7 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return 'The Team - Atrato';
+		return 'Event Table - Atrato';
 	}
 
 	/**
@@ -87,7 +87,7 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'atrato' , 'team' , 'staff' ];
+		return [ 'events' , 'calendar' , 'financial' ];
 	}
 
 	/**
@@ -108,32 +108,6 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'staff_group',
-			[
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'label' => 'Group to show',
-				'options' => [
-					'' => 'Show all',
-					'directors' => 'Board of directors',
-					'investment' => 'Investment team',
-				],
-			]
-		);
-
-		/*
-		$tmo = get_team_member_options();
-
-		$this->add_control(
-			'title',
-			[
-				'type' => \Elementor\Controls_Manager::SELECT2,
-				'label' => 'Team Member',
-				'multiple' => true,
-				'options' => $tmo,
-			]
-		);
-		*/
 	}
 
 	/**
@@ -146,60 +120,52 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		$settings = $this->get_settings_for_display();
+		//$settings = $this->get_settings_for_display();
 		?>
 
-		<div class="atr-the-team staff-group-<?php echo $settings['staff_group']; ?>">
+		<div class="atr-event-table">
 			<?php
 			$args = [
 		    'posts_per_page' => -1,
-		    'post_type' => 'team',
+		    'post_type' => 'event',
+			  'meta_key'          => 'event_date',
+			  'orderby'           => 'meta_value_num',
+			  'order'             => 'ASC',
+				'meta_query' => array(
+	        'relation' => 'OR',
+	        array(
+            'key'     => 'event_date',
+            'value'   => date('Ymd'),
+            'compare' => '>='
+	        ),
+		    ),
 		  ];
-			if ($settings['staff_group'] != "") {
-
-				$args['meta_query'] = [
-	        [
-            'key'     => 'staff_group',
-            'value'   => $settings['staff_group'],
-            'compare' => '=',
-	        ]
-				];
-
-			}
-
 
 		  $the_query = new WP_Query( $args );
 		  if ( $the_query->have_posts() ) {
 		    while ( $the_query->have_posts() ) {
 		      $the_query->the_post();
-					?><div class="att-container">
-						<div class="att-link" data-team-id="<?php echo get_the_ID(); ?>">
-							<div class="att-image">
-								<?php echo wp_get_attachment_image( get_field('image') , 'team-member' ); ?>
-								<img src="/wp-content/uploads/2022/06/Ellipse-35.png" class="ellipse lazyloaded" data-src="/wp-content/uploads/2022/06/Ellipse-35.png" decoding="async" />
-							</div>
-							<div class="att-name">
-								<?php the_title(); ?>
-							</div>
-							<div class="att-title">
-								<?php the_field( 'title' ); ?>
-							</div>
-							<div class="att-excerpt">
-								<?php the_field( 'excerpt' ); ?>
-							</div>
+					?><div class="aet-table-row">
+						<div class="aet-table-cell event-name">
+							<?php the_title(); ?>
+						</div>
+						<div class="aet-table-cell event-date">
+							<?php the_field('event_date'); ?>
+						</div>
+						<div class="aet-table-cell event-add-btn">
 							<?php
-							$liurl = get_field( 'linkedin_url' );
-							if ($liurl != "") {
-								?>
-								<div class="att-linked-in">
-									<i class="fab fa-linkedin-square" aria-hidden="true"></i>
-									<a href="<?php echo $liurl; ?>" target="_blank">
-										Connect with me
-									</a>
-								</div>
-								<?php
-							}
+							$text = get_the_title();
+							$ukformatdate = get_field('event_date');
+							$parts = explode('/',$ukformatdate);
+							$universaldate = $parts[2] . '-' . $parts[1] . '-' . $parts[0];
+							$startdate = date('Ymd',strtotime($universaldate));
+							$enddate = date('Ymd',strtotime("+1 day",strtotime($universaldate)));
+							$dates = $startdate . '/' . $enddate;
+							$calurl = 'https://calendar.google.com/calendar/r/eventedit?text=' . urlencode( $text ) . '&dates=' . urlencode( $dates ) ;
 							?>
+							<a href="<?php echo $calurl; ?>">
+								Add to calendar
+							</a>
 						</div>
 					</div>
 					<?php

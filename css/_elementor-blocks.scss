@@ -204,3 +204,53 @@
     }
   }
 }
+
+.atr-event-table {
+  .aet-table-row {
+    display: flex;
+    border-bottom: 1px solid #fff;
+    border-color: var(--e-global-color-primary);
+
+    @media (max-width: 900px) {
+      display: block;
+      padding: 10px 0;
+    }
+
+    .aet-table-cell {
+      padding: 20px 15px;
+      &:first-child { padding-left: 0; }
+      &:last-child { padding-right: 0; }
+
+      @media (max-width: 900px) { padding: 5px 0; }
+
+
+      &.event-name {
+        width: 60%;
+        @media (max-width: 900px) { width: 100%; }
+      }
+      &.event-date {
+        width: 20%;
+        @media (max-width: 900px) { width: 100%; }
+      }
+      &.event-add-btn {
+        width: 20%;
+        text-align: right;
+        @media (max-width: 900px) { text-align: left; width: 100%; }
+
+        a:before {
+          display: inline-block;
+          content: "+";
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          line-height: 19px;
+          font-size: 25px;
+          text-align: center;
+          background: var(--e-global-color-primary);
+          color: #fff;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

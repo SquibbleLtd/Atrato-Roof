@@ -11,6 +11,9 @@ function atr_register_elementor_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/elementor-blocks/team.php' );
   $widgets_manager->register( new \Elementor_The_Team() );
 
+  require_once( __DIR__ . '/elementor-blocks/event-table.php' );
+  $widgets_manager->register( new \Elementor_Event_Table() );
+
 }
 add_action( 'elementor/widgets/register', 'atr_register_elementor_widgets' );
 

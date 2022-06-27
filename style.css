@@ -3,7 +3,7 @@ Template Name: Atrato Roof
 Template: generatepress
 */
 
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 @media(min-width: 1400px){
     .elementor-section.elementor-section-boxed > .elementor-container{
@@ -65,5 +65,52 @@ Template: generatepress
 
 .inside-header{
     padding: 20px 10px;
+}
+
+.hs-form-private input{
+    border-color: #729C93;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+
+.hs-form-private label{
+    color: #025B49;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.hs-form-required{
+    display: none;
+}
+
+.hs_recaptcha{
+    display: none;
+}
+
+.hs_submit{
+    text-align: center;
+}
+
+.hs_submit input{
+    padding: 15px 60px;
+    border-radius: 30px;
+    background-color: #025B49;
+    border-color: #025B49;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.hs_submit input:hover{
+    padding: 15px 60px;
+    border-radius: 30px;
+    background-color: #729C93;
+    border-color: #729C93;
+    font-size: 18px;
+}
+
+.hubspot-link__container .sproket{
+    display: none;
 }
 

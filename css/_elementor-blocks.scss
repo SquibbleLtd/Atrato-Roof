@@ -18,31 +18,60 @@
     .att-link {
       cursor: pointer;
 
-      .att-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 50%;
-        margin-bottom: 20px;
+      .att-image { 
+        position: relative;
+        .attachment-team-member {
+          width: 100%;
+          height: auto;
+          border-radius: 50%;
+          margin-bottom: 20px;
+          z-index: 2;
+        }
+        .ellipse{
+          position: absolute;
+          right: -15%;
+          top: -15%;
+          width: 50%;
+          z-index: -1;
+        }
       }
 
       .att-name {
         color: var(--e-global-color-primary);
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
       }
 
       .att-title {
         font-size: 22px;
-        font-weight: bold;
+        font-weight: 400;
+        color: #028C73;
+        margin-top: 10px;
       }
 
       .att-excerpt {
         font-size: 18px;
+        color: #000000;
+        margin-top: 15px;
       }
 
       .att-linked-in {
         font-size: 12px;
-        color: var(--e-global-color-secondary);
+        color: var(--e-global-color-primary);
+        margin-top: 20px;
+        &:hover {
+          color: var(--e-global-color-secondary);
+        }
+        a{
+          text-decoration: underline;
+        }
+        .fa-linkedin-square{
+          font-size: 18px;
+          top: 2px;
+          color: var(--e-global-color-secondary);
+          position: relative;
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -116,7 +145,7 @@
         img {
           width: 250px;
           height: 250px;
-          margin: 20px 50px 20px 20px;
+          margin: 50px 50px 20px 20px;
           border-radius: 50%;
         }
       }
@@ -124,18 +153,33 @@
       .att-top-right {
         .att-name {
           color: #fff;
-          font-size: 26px;
-          font-weight: bold;
+          font-size: 30px;
+          font-weight: 500;
         }
         .att-title {
           color: #fff;
-          font-size: 24px;
+          font-size: 26px;
+          font-weight: 400;
         }
         .att-linked-in {
-          font-size: 12px;
+          font-size: 15px;
           color: var(--e-global-color-secondary);
+          margin-top: 10px;
+          display: flex;
+          align-items: flex-end;
+          a{
+            text-decoration: underline;
+            &:hover {
+              color: #ffffff !important;
+            }
+          }
+          .fa-linkedin-square{
+            font-size: 26px;
+            color: var(--e-global-color-secondary);
+            margin-right: 10px;
+          }
         }
-        padding-bottom: 20px;
+        padding-bottom: 40px;
       }
     }
 

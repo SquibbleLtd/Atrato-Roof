@@ -82,6 +82,7 @@ function atr_get_team_popup() {
             if ($liurl != "") {
               ?>
               <div class="att-linked-in">
+                <i class="fab fa-linkedin-square" aria-hidden="true"></i>
                 <a href="<?php echo $liurl; ?>" target="_blank">
                   Connect with me
                 </a>

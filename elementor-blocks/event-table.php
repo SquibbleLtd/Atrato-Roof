@@ -143,6 +143,14 @@ class Elementor_Event_Table extends \Elementor\Widget_Base {
 
 		  $the_query = new WP_Query( $args );
 		  if ( $the_query->have_posts() ) {
+			?><div class="aet-table-row row-heading">
+				<div class="aet-table-cell event-name column-heading">
+					<span>Event</span>
+				</div>
+				<div class="aet-table-cell event-date column-heading">
+					<span>Date</span>
+				</div>
+			</div><?php
 		    while ( $the_query->have_posts() ) {
 		      $the_query->the_post();
 					?><div class="aet-table-row">

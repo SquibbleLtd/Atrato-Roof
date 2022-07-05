@@ -176,7 +176,8 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 						<div class="att-link" data-team-id="<?php echo get_the_ID(); ?>">
 							<div class="att-image">
 								<?php echo wp_get_attachment_image( get_field('image') , 'team-member' ); ?>
-								<img src="/wp-content/uploads/2022/06/Ellipse-35.png" class="ellipse lazyloaded" data-src="/wp-content/uploads/2022/06/Ellipse-35.png" decoding="async" />
+								<img src="/wp-content/uploads/2022/06/Ellipse-35.png" class="ellipse lazyloaded about-team" data-src="/wp-content/uploads/2022/06/Ellipse-35.png" decoding="async" />
+								<img src="/wp-content/uploads/2022/06/Ellipse-44.png" class="ellipse lazyloaded investor-team" data-src="/wp-content/uploads/2022/06/Ellipse-44.png" decoding="async" />
 							</div>
 							<div class="att-name">
 								<?php the_title(); ?>
@@ -192,7 +193,7 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 							if ($liurl != "") {
 								?>
 								<div class="att-linked-in">
-									<i class="fab fa-linkedin-square" aria-hidden="true"></i>
+									<i class="fab fa-linkedin" aria-hidden="true"></i>
 									<a href="<?php echo $liurl; ?>" target="_blank">
 										Connect with me
 									</a>

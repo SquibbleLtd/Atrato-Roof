@@ -27,13 +27,14 @@
           border-radius: 50%;
           margin-bottom: 20px;
           z-index: 2;
+          position: relative;
         }
         .ellipse{
           position: absolute;
           right: -15%;
           top: -15%;
           width: 50%;
-          z-index: -1;
+          z-index: 1;
         }
       }
 
@@ -58,15 +59,15 @@
 
       .att-linked-in {
         font-size: 12px;
-        color: var(--e-global-color-primary);
         margin-top: 20px;
-        &:hover {
-          color: var(--e-global-color-secondary);
-        }
         a{
           text-decoration: underline;
+          color: var(--e-global-color-primary);
+          &:hover {
+            color: var(--e-global-color-secondary);
+          }
         }
-        .fa-linkedin-square{
+        .fa-linkedin{
           font-size: 18px;
           top: 2px;
           color: var(--e-global-color-secondary);
@@ -77,11 +78,20 @@
     }
   }
 
+  &.staff-group-{
+    .investor-team{
+      display: none;
+    }
+  }
+
   &.staff-group-investment  {
     .att-container {
       width: 20%;
       @media (max-width: 767px) { width: 50%; }
       @media (max-width: 400px) { width: 100%; }
+    }
+    .about-team{
+      display: none;
     }
   }
   &.staff-group-directors  {
@@ -89,6 +99,9 @@
       width: 33.3%;
       @media (max-width: 767px) { width: 50%; }
       @media (max-width: 400px) { width: 100%; }
+    }
+    .about-team{
+      display: none;
     }
   }
 }
@@ -154,19 +167,35 @@
       color: #fff;
       display: flex;
       align-items: flex-end;
+      @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       .att-image {
         margin-bottom: -60px;
+        @media (max-width: 767px) {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 0;
+        }
 
         img {
           width: 250px;
           height: 250px;
           margin: 50px 50px 20px 20px;
           border-radius: 50%;
+          @media (max-width: 767px) {
+            margin: 50px 20px 20px 20px;
+          }
         }
       }
 
       .att-top-right {
+        @media (max-width: 767px) {
+          width: 100%;
+          margin: 0 20px 30px 20px; 
+        }
         .att-name {
           color: #fff;
           font-size: 30px;
@@ -182,14 +211,14 @@
           color: var(--e-global-color-secondary);
           margin-top: 10px;
           display: flex;
-          align-items: flex-end;
+          align-items: center;
           a{
             text-decoration: underline;
             &:hover {
               color: #ffffff !important;
             }
           }
-          .fa-linkedin-square{
+          .fa-linkedin{
             font-size: 26px;
             color: var(--e-global-color-secondary);
             margin-right: 10px;
@@ -201,6 +230,9 @@
 
     .attp-bottom {
       padding: 100px;
+      @media (max-width: 767px) {
+        padding: 50px 20px;
+      }
     }
   }
 }
@@ -210,6 +242,13 @@
     display: flex;
     border-bottom: 1px solid #fff;
     border-color: var(--e-global-color-primary);
+
+    &.row-heading{
+      border-bottom: none !important;
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
 
     @media (max-width: 900px) {
       display: block;
@@ -222,6 +261,18 @@
       &:last-child { padding-right: 0; }
 
       @media (max-width: 900px) { padding: 5px 0; }
+
+      &.column-heading{
+        padding-top: 0;
+        padding-bottom: 0;
+        @media (max-width: 1024px) {
+          display: none;
+        }
+        
+        span{
+          color: #669E93;
+        }
+      }
 
 
       &.event-name {
@@ -246,7 +297,7 @@
           line-height: 19px;
           font-size: 25px;
           text-align: center;
-          background: var(--e-global-color-primary);
+          background: #028C73;
           color: #fff;
           margin-right: 5px;
         }

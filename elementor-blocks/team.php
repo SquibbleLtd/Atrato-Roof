@@ -114,7 +114,7 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'label' => 'Group to show',
 				'options' => [
-					'' => 'Show all',
+					'energy' => 'Energy experts',
 					'directors' => 'Board of directors',
 					'investment' => 'Investment team',
 				],
@@ -186,7 +186,8 @@ class Elementor_The_Team extends \Elementor\Widget_Base {
 								<?php the_field( 'title' ); ?>
 							</div>
 							<div class="att-excerpt">
-								<?php the_field( 'excerpt' ); ?>
+								<?php $excerpt = wp_trim_words( get_field('excerpt'), $num_words = 15, $more = '...' );
+								echo $excerpt; ?>
 							</div>
 							<?php
 							$liurl = get_field( 'linkedin_url' );

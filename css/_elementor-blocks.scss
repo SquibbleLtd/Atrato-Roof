@@ -197,7 +197,7 @@
       .att-top-right {
         @media (max-width: 767px) {
           width: 100%;
-          margin: 0 20px 30px 20px; 
+          margin: 0 20px 30px 20px;
         }
         .att-name {
           color: #fff;
@@ -271,7 +271,7 @@
         @media (max-width: 1024px) {
           display: none;
         }
-        
+
         span{
           color: #669E93;
         }
@@ -304,6 +304,81 @@
           color: #fff;
           margin-right: 5px;
         }
+      }
+    }
+  }
+}
+
+
+.atr-presentations {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px -15px;
+  width: calc(100% + 30px);
+  max-width: calc(100% + 30px);
+
+  .atr-presentation {
+    width: calc(25% - 30px);
+
+    @media (max-width: 1199px) { width: calc(33.33% - 30px); }
+    @media (max-width: 767px) { width: calc(50% - 30px); }
+    @media (max-width: 500px) { width: calc(100% - 30px); }
+
+    margin: 15px;
+    padding: 50px 30px 100px;
+    -webkit-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.39);
+    box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.39);
+    position: relative;
+
+    .atr-presentation-bgimage img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .atr-presentation-bgimage:after {
+      content: " ";
+      background: #ffffff99;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    .atr-presentation-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .atr-presentation-date {
+      font-size: 18px;
+    }
+    .atr-presentation-btn {
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      right: 20px;
+      text-align: center;
+
+      a.btn {
+        font-family: "Montserrat", Sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        fill: var( --e-global-color-primary );
+        color: var( --e-global-color-primary );
+        background-color: var( --e-global-color-accent );
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-radius: 30px 30px 30px 30px;
+        box-shadow: 0px 3px 6px 0px rgba( 0 , 0 , 0 , 0.16 );
+        padding: 12px 40px 12px 40px;
+        white-space: nowrap;
       }
     }
   }

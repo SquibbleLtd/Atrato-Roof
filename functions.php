@@ -14,6 +14,12 @@ function atr_register_elementor_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/elementor-blocks/event-table.php' );
   $widgets_manager->register( new \Elementor_Event_Table() );
 
+  require_once( __DIR__ . '/elementor-blocks/presentations.php' );
+  $widgets_manager->register( new \Elementor_Presentations() );
+
+  require_once( __DIR__ . '/elementor-blocks/regulatory-documents.php' );
+  $widgets_manager->register( new \Elementor_Regulatory_Documents() );
+
 }
 add_action( 'elementor/widgets/register', 'atr_register_elementor_widgets' );
 

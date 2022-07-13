@@ -5,19 +5,19 @@
   max-width: calc(100% + 30px);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .atr-the-team .att-container {
   width: 25%;
   padding: 30px;
   text-align: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .atr-the-team .att-container {
     width: 50%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .atr-the-team .att-container {
     width: 100%;
   }
@@ -35,6 +35,9 @@
   margin-bottom: 20px;
   z-index: 2;
   position: relative;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .atr-the-team .att-container .att-link .att-image .ellipse {
   position: absolute;
@@ -83,12 +86,12 @@
 .atr-the-team.staff-group-investment .att-container {
   width: 20%;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .atr-the-team.staff-group-investment .att-container {
     width: 50%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .atr-the-team.staff-group-investment .att-container {
     width: 100%;
   }
@@ -99,12 +102,12 @@
 .atr-the-team.staff-group-directors .att-container {
   width: 33.3%;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .atr-the-team.staff-group-directors .att-container {
     width: 50%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .atr-the-team.staff-group-directors .att-container {
     width: 100%;
   }
@@ -141,6 +144,7 @@
   max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 #att-popup .att-popup-inner .close-att-popup-btn {
   position: absolute;

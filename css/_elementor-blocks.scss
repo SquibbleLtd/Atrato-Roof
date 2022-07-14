@@ -326,9 +326,10 @@
 
     margin: 15px;
     padding: 50px 30px 100px;
-    -webkit-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.39);
-    box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 0 3px 6px 0px rgba(0,0,0,0.39);
+    box-shadow: 0 3px 6px 0px rgba(0,0,0,0.39);
     position: relative;
+    min-height: 350px;
 
     .atr-presentation-bgimage img {
       position: absolute;
@@ -352,12 +353,12 @@
       z-index: -1;
     }
     .atr-presentation-title {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
       margin-bottom: 10px;
     }
     .atr-presentation-date {
-      font-size: 18px;
+      font-size: 20px;
     }
     .atr-presentation-btn {
       position: absolute;

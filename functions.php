@@ -20,6 +20,9 @@ function atr_register_elementor_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/elementor-blocks/regulatory-documents.php' );
   $widgets_manager->register( new \Elementor_Regulatory_Documents() );
 
+  require_once( __DIR__ . '/elementor-blocks/key-documents.php' );
+  $widgets_manager->register( new \Elementor_Key_Documents() );
+
 }
 add_action( 'elementor/widgets/register', 'atr_register_elementor_widgets' );
 

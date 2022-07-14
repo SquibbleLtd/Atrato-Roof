@@ -107,21 +107,6 @@ class Elementor_Key_Documents extends \Elementor\Widget_Base {
 				'label' => 'Content',
 			]
 		);
-
-		$this->add_control(
-			'category',
-			[
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'label' => 'Category',
-				'options' => [
-					'' => 'Show all',
-					'Corporate' => 'Corporate',
-					'Governance' => 'Governance',
-					'Sustainability' => 'Sustainability',
-				],
-			]
-		);
-
 	}
 
 	/**
@@ -134,7 +119,7 @@ class Elementor_Key_Documents extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		$settings = $this->get_settings_for_display();
+		//$settings = $this->get_settings_for_display();
 		?>
 
 		<div class="atr-presentations">
@@ -143,16 +128,6 @@ class Elementor_Key_Documents extends \Elementor\Widget_Base {
 		    'posts_per_page' => -1,
 		    'post_type' => 'key_documents',
 		  ];
-			if ($settings['category'] != "") {
-
-				$args['meta_query'] = [
-	        [
-            'key'     => 'category',
-            'value'   => $settings['category'],
-            'compare' => '=',
-	        ]
-				];
-			}
 
 		  $the_query = new WP_Query( $args );
 		  if ( $the_query->have_posts() ) {
@@ -162,9 +137,6 @@ class Elementor_Key_Documents extends \Elementor\Widget_Base {
 					<div class="atr-presentation">
 						<div class="atr-presentation-bgimage">
 							<?php echo wp_get_attachment_image( get_field('background_image' ) , 'large' ); ?>
-						</div>
-						<div class="atr-presentation-category">
-							<?php the_field('category'); ?>
 						</div>
 						<div class="atr-presentation-title">
 							<?php the_title(); ?>

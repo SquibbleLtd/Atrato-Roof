@@ -132,7 +132,7 @@ class Elementor_Key_Documents extends \Elementor\Widget_Base {
 
 		  $the_query = new WP_Query( $args );
 		  if ( $the_query->have_posts() ) {
-			echo "test";
+			
 		    while ( $the_query->have_posts() ) {
 		      $the_query->the_post();
 					?>

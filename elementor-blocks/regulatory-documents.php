@@ -142,6 +142,8 @@ class Elementor_Regulatory_Documents extends \Elementor\Widget_Base {
 			$args = [
 		    'posts_per_page' => -1,
 		    'post_type' => 'regulatory_documents',
+			'orderby' => 'date',
+            'order'   => 'DESC',
 		  ];
 			if ($settings['category'] != "") {
 
@@ -169,9 +171,9 @@ class Elementor_Regulatory_Documents extends \Elementor\Widget_Base {
 						<div class="atr-presentation-title">
 							<?php the_title(); ?>
 						</div>
-						<div class="atr-presentation-date">
-							<?php echo get_the_date(); ?>
-						</div>
+						<!-- <div class="atr-presentation-date">
+							<?php //echo get_the_date(); ?>
+						</div> -->
 						<div class="atr-presentation-btn">
 							<a href="<?php the_field('document'); ?>" class="btn">
 								Download

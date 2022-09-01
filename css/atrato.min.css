@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-family: "Montserrat";
 }
 .atr-the-team .att-container {
   width: 30%;
@@ -145,6 +146,7 @@
   max-height: 90%;
   overflow-y: auto;
   overflow-x: hidden;
+  font-family: "Montserrat";
 }
 #att-popup .att-popup-inner .close-att-popup-btn {
   position: absolute;
@@ -247,6 +249,9 @@
   }
 }
 
+.atr-event-table {
+  font-family: "Montserrat";
+}
 .atr-event-table .aet-table-row {
   display: flex;
   border-bottom: 1px solid #fff;
@@ -338,6 +343,7 @@
   margin: 30px -15px;
   width: calc(100% + 30px);
   max-width: calc(100% + 30px);
+  font-family: "Montserrat";
 }
 .atr-presentations .atr-presentation {
   width: calc(25% - 30px);

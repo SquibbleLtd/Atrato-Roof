@@ -175,7 +175,7 @@ class Elementor_Regulatory_Documents extends \Elementor\Widget_Base {
 							<?php //echo get_the_date(); ?>
 						</div> -->
 						<div class="atr-presentation-btn">
-							<a href="<?php the_field('document'); ?>" class="btn">
+							<a href="<?php the_field('document'); ?>" class="btn" target="_blank">
 								Download
 							</a>
 						</div>

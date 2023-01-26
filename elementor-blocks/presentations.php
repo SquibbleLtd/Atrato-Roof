@@ -145,11 +145,26 @@ class Elementor_Presentations extends \Elementor\Widget_Base {
 						<div class="atr-presentation-date">
 							<?php echo get_the_date(); ?>
 						</div>
-						<div class="atr-presentation-btn">
-							<a href="<?php the_field('document'); ?>" class="btn" target="_blank">
-								Download
-							</a>
-						</div>
+						<?php
+						if(get_field('use_link') == 1){
+						?>
+							<div class="atr-presentation-btn">
+								<a href="<?php the_field('link_to_use'); ?>" class="btn" target="_blank">
+									View
+								</a>
+							</div>
+						<?php
+						}
+						else{
+						?>
+							<div class="atr-presentation-btn">
+								<a href="<?php the_field('document'); ?>" class="btn" target="_blank">
+									Download
+								</a>
+							</div>
+						<?php
+						}
+						?>
 					</div>
 					<?php
 		    }

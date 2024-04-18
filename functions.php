@@ -1,8 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 require_once(get_stylesheet_directory() . '/includes/includes.php');
 
@@ -55,3 +55,14 @@ function js_chart_scripts(){
   }
 //Register hook to load scripts
 add_action('wp_enqueue_scripts', 'js_chart_scripts');
+
+$uri = $_SERVER['REQUEST_URI'];
+$cookie = '';
+if(isset($_COOKIE["authenticated"])){
+  $cookie = $_COOKIE["authenticated"];
+}
+
+if(str_contains($uri, "investor") && $cookie !== "true"){
+  header("Location: /jurisdiction/", true, 307);
+  exit();
+}
